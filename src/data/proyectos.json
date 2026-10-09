@@ -8,7 +8,7 @@
       "CSS",
       "JavaScript"
     ],
-    "imagen": "img/proyecto1.jpeg",
+    "imagen": "img/proyecto1.webp",
     "enlace": "https://github.com/jonatanparra/grupo4",
     "textoEnlace": "Ver proyecto",
     "enProceso": false
@@ -21,7 +21,7 @@
       "React",
       "Bootstrap"
     ],
-    "imagen": "img/proyecto2.png",
+    "imagen": "img/proyecto2.webp",
     "enlace": "",
     "textoEnlace": "Ver proyecto",
     "enProceso": true
@@ -34,7 +34,7 @@
       "HTML",
       "CSS"
     ],
-    "imagen": "img/proyecto3.png",
+    "imagen": "img/proyecto3.webp",
     "enlace": "",
     "textoEnlace": "Ver proyecto",
     "enProceso": true
