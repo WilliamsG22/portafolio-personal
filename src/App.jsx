@@ -10,7 +10,7 @@ import { cargarJSON } from './utils/cargarDatos.js';
 const enlaces = [
   { id: 'inicio', texto: 'Introducción' },
   { id: 'proyectos', texto: 'Proyectos' },
-  { id: 'noticias', texto: 'Noticias' },
+  { id: 'noticias', texto: 'Platinos' },
   { id: 'contacto', texto: 'Contacto' },
 ];
 
@@ -31,15 +31,15 @@ export default function App() {
       <main>
         <Introduccion
           nombre="Williams Rivera García"
-          titulo="Estudiante de Informática Duoc UC | Entusiasta de la Tecnología"
+          titulo="Estudiante de Informática Duoc UC | Amante de los videojuegos y la tecnología"
           bio="Bienvenido a mi portafolio personal donde comparto mis proyectos y noticias recientes."
-          foto="img/perfil.svg"
-          github="https://github.com/tu-usuario"
+          foto="img/perfil.jpg"
+          github="https://github.com/WilliamsG22"
         />
         <Proyectos proyectos={proyectos} />
         <section id="noticias" className="py-5 bg-light">
           <div className="container">
-            <h2 className="mb-4">Noticias</h2>
+            <h2 className="mb-4">Mi proceso de platino</h2>
             {error && (
               <div className="alert alert-danger" role="alert">
                 {error}
@@ -47,10 +47,10 @@ export default function App() {
             )}
             <div className="row">
               <div className="col-12 col-md-6">
-                <SeccionNoticias titulo="Tecnología" noticias={noticias.tecnologia} />
+                <SeccionNoticias titulo="Platinos conseguidos" noticias={noticias.tecnologia} />
               </div>
               <div className="col-12 col-md-6">
-                <SeccionNoticias titulo="Mi carrera" noticias={noticias.carrera} />
+                <SeccionNoticias titulo="En progreso" noticias={noticias.carrera} />
               </div>
             </div>
           </div>

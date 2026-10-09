@@ -2,25 +2,25 @@
   {
     "id": 1,
     "titulo": "Gl1tch_St0re",
-    "descripcion": "Tienda online con catálogo de productos y panel de administrador.",
+    "descripcion": "Tienda online de juegos de PlayStation 4 con estética glitch, hecha junto a Jonatan Parra y Vicente Azócar. Participé en su desarrollo y me gustó mucho trabajar en ella.",
     "tecnologias": ["HTML", "CSS", "JavaScript"],
-    "imagen": "img/proyecto1.svg",
-    "enlace": "https://github.com/tu-usuario/gl1tch-store"
+    "imagen": "img/proyecto1.jpeg",
+    "enlace": "https://github.com/WilliamsG22"
   },
   {
     "id": 2,
-    "titulo": "Sistema de entradas para eventos",
-    "descripcion": "Aplicación de consola para gestionar la venta de entradas de eventos.",
-    "tecnologias": ["Kotlin", "POO", "Corrutinas"],
-    "imagen": "img/proyecto2.svg",
-    "enlace": "https://github.com/tu-usuario/sistema-entradas"
+    "titulo": "Platinador",
+    "descripcion": "Mi lista de juegos para llevar la cuenta de mis platinos. Me encantaría aprender a crear mis propios videojuegos, y este proyecto es un primer paso.",
+    "tecnologias": ["React","Bootstrap"],
+    "imagen": "img/proyecto2.png",
+    "enlace": "https://github.com/WilliamsG22"
   },
   {
     "id": 3,
-    "titulo": "Examen transversal Oracle",
-    "descripcion": "Scripts de base de datos con consultas y bloques PL/SQL.",
-    "tecnologias": ["Oracle SQL", "PL/SQL"],
-    "imagen": "img/proyecto3.svg",
-    "enlace": "https://github.com/tu-usuario/examen-oracle"
+    "titulo": "Diario de Arthur",
+    "descripcion": "Un diario inspirado en Arthur Morgan, de Red Dead Redemption 2, con entradas por capítulo. Lo hice por lo mucho que me gusta el juego.",
+    "tecnologias": ["HTML", "CSS"],
+    "imagen": "img/proyecto3.png",
+    "enlace": "https://github.com/WilliamsG22"
   }
 ]
