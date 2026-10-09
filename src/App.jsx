@@ -43,9 +43,8 @@ export default function App() {
           nombre="Williams Rivera García"
           titulo="Estudiante de Informática Duoc UC | Amante de los videojuegos y la tecnología"
           bio="Bienvenido a mi portafolio personal donde comparto mis proyectos y noticias recientes."
-          foto="img/perfil.jpg"
+          foto="img/perfil.webp"
           github="https://github.com/WilliamsG22"
-          youtube="https://www.youtube.com/watch?v=xLGktQmtR5A&list=LL&index=13"
         />
         <Proyectos proyectos={proyectos} />
         <section id="noticias" className="py-5 bg-light">
