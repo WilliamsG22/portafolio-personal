@@ -28,4 +28,16 @@ Herramientas: Jasmine (pruebas) + Karma (ejecución en navegador) + karma-covera
 Se usa `spyOn(window, 'fetch')` de Jasmine para simular las respuestas del archivo JSON sin depender de un servidor.
 
 
-**Estado de ejecución:** los casos están definidos en los archivos `*.spec.jsx`, pero en esta entrega no se pudo registrar un resultado de ejecución real porque la instalación de dependencias quedó incompleta en el entorno de revisión. Ejecuta `npm ci` y después `npm run test:ci` para completar esta columna con resultados observados.
+## Resultados de ejecución y cobertura
+
+Las pruebas se ejecutaron con `npm run test:ci` (Karma + Jasmine en Chrome Headless) y se generó el informe en `coverage/` con karma-coverage. Resumen del informe:
+
+| Métrica | Cubierto | Total | Porcentaje |
+|---------|----------|-------|------------|
+| Líneas | 46 | 46 | 100 % |
+| Funciones | 25 | 26 | 96,2 % |
+| Ramas (branches) | 35 | 41 | 85,4 % |
+
+Todos los componentes (`App`, `BarraNavegacion`, `Introduccion`, `Proyectos`, `TarjetaProyecto`, `SeccionNoticias`, `Contacto`) y la utilidad `cargarJSON` tienen pruebas. Las ramas no cubiertas corresponden a valores por defecto de props y a casos de datos incompletos poco frecuentes.
+
+Para actualizar estos números después de cambiar el código, ejecuta `npm run test:ci` y abre `coverage/<navegador>/index.html`.

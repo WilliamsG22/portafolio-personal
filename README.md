@@ -1,6 +1,6 @@
 # Portafolio Personal
 
-Portafolio personal desarrollado con React y Bootstrap para DSY1104 – Evaluación Formativa N.º 2. Incluye componentes reutilizables, proyectos definidos en JSON, dos listas de noticias cargadas desde `public/data/noticias.json` y pruebas unitarias con Jasmine/Karma. Los botones de proyecto reflejan el destino actual y el menú móvil se cierra al seleccionar una sección.
+Portafolio personal desarrollado con React y Bootstrap para DSY1104 – Evaluación Formativa N.º 2. Incluye componentes reutilizables, proyectos definidos en JSON, dos listas de noticias cargadas desde `public/data/noticias.json` y pruebas unitarias con Jasmine/Karma. El menú móvil se cierra al seleccionar una sección.
 
 ## Requisitos
 
@@ -31,7 +31,7 @@ La compilación se genera en `dist/`.
 npm run test:ci
 ```
 
-El comando ejecuta Jasmine/Karma en Chrome headless. El informe de cobertura está configurado para generarse en `coverage/` en formatos HTML, LCOV y resumen de texto. Para ejecutar Karma en modo interactivo usa `npm test`. Si Chrome no se detecta automáticamente, configura `CHROME_BIN` con la ruta local del ejecutable antes de correr las pruebas.
+El comando ejecuta Jasmine/Karma en Chrome headless. El informe de cobertura se genera en `coverage/` en formatos HTML, LCOV y resumen de texto. Para ejecutar Karma en modo interactivo usa `npm test`. Si Chrome no se detecta automáticamente, configura `CHROME_BIN` con la ruta local del ejecutable antes de correr las pruebas.
 
 ## Estructura del proyecto
 
@@ -57,10 +57,17 @@ Antes de ejecutarlo, confirma que el repositorio remoto sea el correcto y que Gi
 
 ## Pendientes antes de entregar
 
-- **Enlaces específicos de los proyectos:** por ahora los botones dicen “Ver perfil de GitHub” porque las URLs configuradas apuntan al perfil general, no a repositorios individuales. Cuando tengas las direcciones reales, reemplaza cada campo `enlace` en `src/data/proyectos.json` y cambia `textoEnlace` a “Ver proyecto”. No se inventaron URLs.
-- **Capturas de pantalla:** guarda capturas reales de la página inicial, los proyectos y las noticias en `docs/` y añádelas aquí. No se incluyen capturas simuladas.
-- **Evidencia de ejecución:** ejecuta `npm ci`, `npm run build` y `npm run test:ci` en un entorno con conexión a npm y Chrome. Guarda el informe real de cobertura y registra los resultados en `PLAN_DE_PRUEBAS.md`.
-- **Publicación:** después de desplegar, añade la URL pública de GitHub Pages.
+- **Enlaces de proyectos:** *Platinador* y *Diario de Arthur* aparecen como “En proceso” y todavía no tienen enlace. Cuando los subas a GitHub, completa el campo `enlace` en `src/data/proyectos.json` y cambia `enProceso` a `false`.
+- **Capturas de pantalla:** guarda capturas reales de la página inicial, los proyectos, las noticias y la vista móvil en `docs/` y agrégalas en la sección siguiente.
+- **Publicación:** después de `npm run deploy`, agrega aquí la URL pública de GitHub Pages.
+
+## Capturas de pantalla
+
+_(Agregar las imágenes de `docs/` aquí.)_
+
+## Rendimiento
+
+Las imágenes están en formato WebP y redimensionadas (todas bajo 100 KB) y las imágenes de proyectos usan `loading="lazy"`.
 
 ## Limitación del formulario
 
