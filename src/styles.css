@@ -1,0 +1,38 @@
+/* Estilos personalizados que se suman a Bootstrap */
+:root {
+  --color-inicio: #6a11cb;
+  --color-fin: #2575fc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 70px;
+}
+
+.hero {
+  background: linear-gradient(90deg, var(--color-inicio), var(--color-fin));
+  color: #fff;
+}
+
+.hero .foto-perfil {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+
+.tarjeta-proyecto img {
+  height: 180px;
+  object-fit: cover;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+}

@@ -1,0 +1,26 @@
+{
+  "tecnologia": [
+    {
+      "titulo": "React 18 consolida el renderizado concurrente",
+      "fecha": "2026-09-15",
+      "contenido": "Las aplicaciones React ganan fluidez al priorizar las actualizaciones más importantes de la interfaz."
+    },
+    {
+      "titulo": "Las pruebas unitarias ya son parte del flujo diario",
+      "fecha": "2026-09-28",
+      "contenido": "Herramientas como Jasmine y Karma permiten detectar errores del front-end antes de publicar."
+    }
+  ],
+  "carrera": [
+    {
+      "titulo": "Inicio del trabajo con React en Desarrollo Fullstack II",
+      "fecha": "2026-10-02",
+      "contenido": "Comencé a construir interfaces con componentes reutilizables usando props y state."
+    },
+    {
+      "titulo": "Primer portafolio publicado en GitHub Pages",
+      "fecha": "2026-10-09",
+      "contenido": "Publiqué mi portafolio personal para mostrar mis proyectos del semestre."
+    }
+  ]
+}

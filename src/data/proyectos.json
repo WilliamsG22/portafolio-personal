@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "titulo": "Gl1tch_St0re",
+    "descripcion": "Tienda online con catálogo de productos y panel de administrador.",
+    "tecnologias": ["HTML", "CSS", "JavaScript"],
+    "imagen": "img/proyecto1.svg",
+    "enlace": "https://github.com/tu-usuario/gl1tch-store"
+  },
+  {
+    "id": 2,
+    "titulo": "Sistema de entradas para eventos",
+    "descripcion": "Aplicación de consola para gestionar la venta de entradas de eventos.",
+    "tecnologias": ["Kotlin", "POO", "Corrutinas"],
+    "imagen": "img/proyecto2.svg",
+    "enlace": "https://github.com/tu-usuario/sistema-entradas"
+  },
+  {
+    "id": 3,
+    "titulo": "Examen transversal Oracle",
+    "descripcion": "Scripts de base de datos con consultas y bloques PL/SQL.",
+    "tecnologias": ["Oracle SQL", "PL/SQL"],
+    "imagen": "img/proyecto3.svg",
+    "enlace": "https://github.com/tu-usuario/examen-oracle"
+  }
+]
