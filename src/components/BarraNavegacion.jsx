@@ -31,7 +31,7 @@ export default function BarraNavegacion({ titulo, enlaces }) {
           <ul className="navbar-nav ms-auto">
             {enlaces.map((enlace) => (
               <li className="nav-item" key={enlace.id}>
-                <a className="nav-link" href={`#${enlace.id}`}>
+                <a className="nav-link" href={`#${enlace.id}`} onClick={() => setAbierto(false)}>
                   {enlace.texto}
                 </a>
               </li>

@@ -32,6 +32,8 @@ describe('Contacto', () => {
     await enviarFormulario(c.querySelector('form'));
 
     expect(c.querySelector('.alert-success')).not.toBeNull();
+    expect(c.querySelector('.alert-success').textContent).toContain('no se envió a un servidor');
+    expect(c.querySelector('.confeti-capa')).not.toBeNull();
     expect(c.querySelector('#nombre').value).toBe('');
   });
 });

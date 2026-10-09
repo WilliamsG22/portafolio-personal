@@ -1,26 +1,26 @@
 {
-  "tecnologia": [
+  "logros": [
     {
-      "titulo": "React 18 consolida el renderizado concurrente",
-      "fecha": "2026-09-15",
-      "contenido": "Las aplicaciones React ganan fluidez al priorizar las actualizaciones más importantes de la interfaz."
+      "titulo": "Days Gone",
+      "fecha": "12 de enero de 2021",
+      "contenido": "Mi primer platino. Lo conseguí entre el 29 de diciembre de 2020 y el 12 de enero de 2021."
     },
     {
-      "titulo": "Las pruebas unitarias ya son parte del flujo diario",
-      "fecha": "2026-09-28",
-      "contenido": "Herramientas como Jasmine y Karma permiten detectar errores del front-end antes de publicar."
+      "titulo": "Red Dead Redemption II",
+      "fecha": "4 de marzo de 2022",
+      "contenido": "Mi juego favorito de todos. Amé el ambiente: te metes tanto en el juego que te sientes un vaquero. Lo jugué entre el 26 de julio de 2021 y el 4 de marzo de 2022."
     }
   ],
-  "carrera": [
+  "enProgreso": [
     {
-      "titulo": "Inicio del trabajo con React en Desarrollo Fullstack II",
-      "fecha": "2026-10-02",
-      "contenido": "Comencé a construir interfaces con componentes reutilizables usando props y state."
+      "titulo": "Red Dead Redemption",
+      "fecha": "Desde el 8 de abril de 2026",
+      "contenido": "Aún me falta. No he tenido el tiempo para completarlo, pero está en proceso y sé que lo voy a terminar."
     },
     {
-      "titulo": "Primer portafolio publicado en GitHub Pages",
-      "fecha": "2026-10-09",
-      "contenido": "Publiqué mi portafolio personal para mostrar mis proyectos del semestre."
+      "titulo": "Uncharted 4",
+      "fecha": "Desde el 22 de abril de 2020",
+      "contenido": "Es como un Indiana Jones, pero de videojuegos. Me encanta, pero por el estudio todavía no me he dado el tiempo de terminarlo."
     }
   ]
 }

@@ -9,6 +9,7 @@ Herramientas: Jasmine (pruebas) + Karma (ejecución en navegador) + karma-covera
 | 3 | BarraNavegacion | Renderizado con props | Muestra el título y los enlaces recibidos |
 | 4 | BarraNavegacion | Enlaces | Cada enlace apunta a `#id` de su sección |
 | 5 | BarraNavegacion | Clic en el botón del menú | Se agrega y quita la clase `show` y cambia `aria-expanded` |
+| 5b | BarraNavegacion | Seleccionar un enlace en móvil | El menú se cierra y `aria-expanded` vuelve a `false` |
 | 6 | Introduccion | Renderizado con props | Muestra nombre, título, biografía, foto con `alt` y enlace a GitHub |
 | 7 | TarjetaProyecto | Renderizado con props | Muestra imagen con `alt`, título, descripción, tecnologías y enlace |
 | 8 | Proyectos | Lista de 3 proyectos | Se crean 3 tarjetas |
@@ -19,7 +20,12 @@ Herramientas: Jasmine (pruebas) + Karma (ejecución en navegador) + karma-covera
 | 13 | Contacto | Enviar formulario | Aparece el aviso de éxito y el formulario se limpia |
 | 14 | App | Carga de noticias con `fetch` simulado | Se muestran las noticias de ambas secciones y 3 proyectos |
 | 15 | App | `fetch` simulado con error | Se muestra el mensaje de error |
+| 16 | App | JSON sin las dos listas esperadas | Se muestra un aviso de formato inválido |
+| 17 | SeccionNoticias | Lista que contiene un elemento nulo | Ignora el elemento inválido y renderiza los datos válidos |
 
 ## Mocks
 
 Se usa `spyOn(window, 'fetch')` de Jasmine para simular las respuestas del archivo JSON sin depender de un servidor.
+
+
+**Estado de ejecución:** los casos están definidos en los archivos `*.spec.jsx`, pero en esta entrega no se pudo registrar un resultado de ejecución real porque la instalación de dependencias quedó incompleta en el entorno de revisión. Ejecuta `npm ci` y después `npm run test:ci` para completar esta columna con resultados observados.

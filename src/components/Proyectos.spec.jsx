@@ -21,6 +21,7 @@ describe('TarjetaProyecto', () => {
     expect(c.querySelector('.card-text').textContent).toBe('Descripción uno');
     expect(c.querySelectorAll('.badge').length).toBe(2);
     expect(c.querySelector('a').getAttribute('href')).toBe('https://github.com/x/uno');
+    expect(c.querySelector('a').textContent).toContain('Ver proyecto');
 
     await vista.desmontar();
   });
@@ -33,6 +34,17 @@ describe('Proyectos', () => {
 
     expect(vista.contenedor.querySelectorAll('.card').length).toBe(3);
 
+    await vista.desmontar();
+  });
+});
+
+
+describe('proyectos en proceso', () => {
+  it('muestra la etiqueta y no permite abrir un proyecto pendiente', async () => {
+    const vista = await renderizar(<TarjetaProyecto {...proyecto} enProceso={true} enlace="" />);
+    const c = vista.contenedor;
+    expect(c.textContent).toContain('En proceso');
+    expect(c.querySelector('a')).toBeNull();
     await vista.desmontar();
   });
 });

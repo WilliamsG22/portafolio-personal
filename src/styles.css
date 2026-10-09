@@ -1,38 +1,560 @@
-/* Estilos personalizados que se suman a Bootstrap */
+
 :root {
-  --color-inicio: #6a11cb;
-  --color-fin: #2575fc;
+  --fondo: #080b14;
+  --tarjeta: #0d1224;
+  --morado: #8b35ff;
+  --magenta: #ff2bd6;
+  --cian: #00e5ff;
+  --blanco: #f5f7ff;
+  --gris: #aab5d1;
+  --borde: #252b42;
+
+  /* Variables de Bootstrap ajustadas al tema oscuro */
+  --bs-body-bg: var(--fondo);
+  --bs-body-color: var(--blanco);
+  --bs-secondary-color: var(--gris);
+  --bs-border-color: var(--borde);
+  --bs-link-color: var(--cian);
+  --bs-link-color-rgb: 0, 229, 255;
+  --bs-link-hover-color: var(--blanco);
+  --bs-link-hover-color-rgb: 245, 247, 255;
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--blanco);
+}
+
+/* Líneas de pantalla CRT: muy suaves, no bloquean los clics */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(245, 247, 255, 0.025) 0,
+    rgba(245, 247, 255, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* Títulos y botones con fuente pixel (el texto normal queda legible) */
+h1, h2, h3, h4, h5, h6,
+.navbar-brand,
+.btn {
+  font-family: 'Pixelify Sans', system-ui, sans-serif;
 }
 
 section {
   scroll-margin-top: 70px;
 }
 
+main > section + section {
+  border-top: 1px solid var(--borde);
+}
+
+/* Bootstrap fuerza bg-light con !important, por eso se pisa igual */
+.bg-light {
+  background-color: var(--fondo) !important;
+}
+
+/* ---------- Títulos de sección ---------- */
+section h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--blanco);
+}
+
+section h2::before {
+  content: '>';
+  color: var(--magenta);
+}
+
+section h2::after {
+  content: '';
+  flex: 1;
+  min-width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cian), transparent);
+  opacity: 0.6;
+}
+
+section h3.h4 {
+  color: var(--cian);
+}
+
+/* ---------- Barra de navegación ---------- */
+.navbar.bg-dark {
+  background-color: var(--fondo) !important;
+  border-bottom: 1px solid var(--borde);
+  box-shadow: 0 1px 0 rgba(139, 53, 255, 0.45), 0 4px 24px rgba(139, 53, 255, 0.12);
+}
+
+.navbar-brand {
+  color: var(--blanco) !important;
+  letter-spacing: 0.04em;
+}
+
+/* Cursor parpadeante decorativo */
+.navbar-brand::after {
+  content: '_';
+  margin-left: 2px;
+  color: var(--cian);
+  animation: parpadeo 1.1s steps(1) infinite;
+}
+
+.navbar .nav-link {
+  position: relative;
+  color: var(--gris);
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus-visible {
+  color: var(--blanco);
+  text-shadow: 0 0 10px var(--morado), 0 0 18px rgba(139, 53, 255, 0.6);
+}
+
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 2px;
+  background: var(--morado);
+  box-shadow: 0 0 8px var(--morado);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.navbar-toggler {
+  border-color: var(--morado);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(139, 53, 255, 0.5);
+}
+
+/* ---------- Sección de presentación ---------- */
 .hero {
-  background: linear-gradient(90deg, var(--color-inicio), var(--color-fin));
-  color: #fff;
+  position: relative;
+  overflow: hidden;
+  color: var(--blanco);
+  background-color: var(--fondo);
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(139, 53, 255, 0.28), transparent 60%),
+    linear-gradient(rgba(37, 43, 66, 0.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 43, 66, 0.55) 1px, transparent 1px);
+  background-size: auto, 32px 32px, 32px 32px;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Grupos de píxeles decorativos en dos esquinas */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+}
+
+.hero::before {
+  top: 28px;
+  left: 28px;
+  background: var(--magenta);
+  box-shadow: 8px 0 0 var(--magenta), 16px 0 0 var(--morado), 0 8px 0 var(--cian),
+    8px 8px 0 var(--morado), 0 16px 0 var(--morado);
+}
+
+.hero::after {
+  bottom: 28px;
+  right: 28px;
+  background: var(--cian);
+  box-shadow: -8px 0 0 var(--cian), -16px 0 0 var(--morado), 0 -8px 0 var(--magenta),
+    -8px -8px 0 var(--morado), 0 -16px 0 var(--morado);
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  overflow-wrap: anywhere;
+}
+
+.hero .lead,
+.hero p {
+  color: var(--gris);
 }
 
 .hero .foto-perfil {
   width: 160px;
   height: 160px;
   object-fit: cover;
-  border: 4px solid #fff;
+  background: var(--tarjeta);
+  border: 3px solid var(--morado);
+  /* Separación RGB sutil a los lados, como una señal con interferencia */
+  box-shadow: -4px 0 0 rgba(255, 43, 214, 0.75), 4px 0 0 rgba(0, 229, 255, 0.75),
+    0 0 28px rgba(139, 53, 255, 0.55);
+}
+
+/* Efecto glitch discreto: ocurre un instante cada pocos segundos */
+.glitch {
+  text-shadow: 0 0 14px rgba(139, 53, 255, 0.6);
+  animation: glitch 6s infinite;
+}
+
+/* ---------- Botones ---------- */
+.btn-primary,
+.hero .btn-light {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--morado);
+  --bs-btn-border-color: var(--morado);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--morado);
+  --bs-btn-hover-border-color: var(--cian);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--morado);
+  --bs-btn-active-border-color: var(--cian);
+  --bs-btn-focus-shadow-rgb: 0, 229, 255;
+  border-radius: 2px;
+  box-shadow: 4px 4px 0 var(--magenta);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn-primary:hover,
+.hero .btn-light:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--magenta);
+}
+
+.btn-primary:active,
+.hero .btn-light:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--magenta);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--blanco);
+  --bs-btn-border-color: var(--morado);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--morado);
+  --bs-btn-hover-border-color: var(--morado);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--morado);
+  --bs-btn-active-border-color: var(--morado);
+  --bs-btn-focus-shadow-rgb: 0, 229, 255;
+  border-radius: 2px;
+}
+
+.btn-outline-primary:hover {
+  box-shadow: 0 0 16px rgba(139, 53, 255, 0.6);
+}
+
+.flecha {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.btn:hover .flecha,
+.btn:focus-visible .flecha {
+  transform: translateX(4px);
+}
+
+/* ---------- Tarjetas ---------- */
+.card {
+  --bs-card-bg: var(--tarjeta);
+  --bs-card-color: var(--blanco);
+  --bs-card-border-color: var(--borde);
+  background-color: var(--tarjeta);
+  color: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card-title {
+  color: var(--blanco);
+}
+
+.card-text {
+  color: var(--gris);
+}
+
+.tarjeta-proyecto {
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarjeta-proyecto:hover,
+.tarjeta-proyecto:focus-within {
+  transform: translateY(-6px);
+  border-color: var(--magenta);
+  box-shadow: 0 0 0 1px var(--magenta), 0 10px 30px rgba(139, 53, 255, 0.35),
+    0 0 22px rgba(255, 43, 214, 0.25);
+}
+
+/* Esquina pixelada decorativa */
+.tarjeta-proyecto::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--cian);
+  box-shadow: -8px 0 0 var(--morado), 0 8px 0 var(--morado);
+  pointer-events: none;
 }
 
 .tarjeta-proyecto img {
   height: 180px;
   object-fit: cover;
+  border-bottom: 1px solid var(--borde);
+  transition: filter 0.25s;
 }
 
+.tarjeta-proyecto:hover img {
+  filter: saturate(1.2) brightness(1.05);
+}
+
+/* Etiquetas de tecnologías: tres colores neón que se alternan */
+.badge {
+  border: 1px solid;
+  border-radius: 2px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge.text-bg-primary {
+  background-color: rgba(139, 53, 255, 0.18) !important;
+  border-color: var(--morado);
+  color: var(--blanco) !important;
+}
+
+.tarjeta-proyecto .badge:nth-child(3n + 2) {
+  background-color: rgba(0, 229, 255, 0.1) !important;
+  border-color: var(--cian);
+  color: var(--cian) !important;
+}
+
+.tarjeta-proyecto .badge:nth-child(3n) {
+  background-color: rgba(255, 43, 214, 0.1) !important;
+  border-color: var(--magenta);
+  color: var(--magenta) !important;
+}
+
+/* Tarjetas de la sección de platinos */
+article.card {
+  border-left: 3px solid var(--morado);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+article.card:hover {
+  border-color: var(--cian);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.15);
+}
+
+/* ---------- Formulario ---------- */
+#contacto form {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.form-label {
+  color: var(--gris);
+}
+
+.form-control {
+  background-color: var(--fondo);
+  color: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 2px;
+}
+
+.form-control:focus {
+  background-color: var(--fondo);
+  color: var(--blanco);
+  border-color: var(--morado);
+  box-shadow: 0 0 0 0.2rem rgba(139, 53, 255, 0.35), 0 0 14px rgba(139, 53, 255, 0.4);
+}
+
+.alert-success,
+.alert-danger {
+  --bs-alert-bg: var(--tarjeta);
+  --bs-alert-color: var(--blanco);
+  --bs-alert-border-color: var(--borde);
+  border-left-width: 4px;
+  border-radius: 2px;
+}
+
+.alert-success {
+  border-left-color: var(--cian);
+}
+
+.alert-danger {
+  border-left-color: var(--magenta);
+}
+
+/* ---------- Accesibilidad ---------- */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #ffbf47;
+  outline: 3px solid var(--cian);
   outline-offset: 2px;
+}
+
+/* ---------- Animaciones ---------- */
+@keyframes parpadeo {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes glitch {
+  0%,
+  90%,
+  100% {
+    text-shadow: 0 0 14px rgba(139, 53, 255, 0.6);
+    transform: none;
+  }
+  91% {
+    text-shadow: 3px 0 var(--magenta), -3px 0 var(--cian);
+    transform: translateX(-2px);
+  }
+  93% {
+    text-shadow: -3px 0 var(--magenta), 3px 0 var(--cian);
+    transform: translateX(2px) skewX(-4deg);
+  }
+  95% {
+    text-shadow: 2px 0 var(--magenta), -2px 0 var(--cian);
+    transform: translateX(0);
+  }
+}
+
+/* Si la persona prefiere menos movimiento, se apagan las animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Pantallas pequeñas ---------- */
+@media (max-width: 575.98px) {
+  .hero::before,
+  .hero::after {
+    display: none;
+  }
+
+  .hero .foto-perfil {
+    width: 130px;
+    height: 130px;
+  }
+
+  #contacto form {
+    padding: 1rem;
+  }
+}
+
+/* ---------- Confeti al enviar el formulario ---------- */
+.confeti-capa {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.confeti-pieza {
+  position: absolute;
+  top: -1rem;
+  width: 9px;
+  height: 14px;
+  opacity: 0.95;
+  border-radius: 1px;
+  animation-name: confeti-caer;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+@keyframes confeti-caer {
+  0% { transform: translate3d(0, -2vh, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate3d(var(--deriva), 110vh, 0) rotate(720deg); opacity: 0.15; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confeti-pieza { animation: none; display: none; }
+}
+
+/* Botones de redes sociales: iconos y texto siempre visibles */
+.hero .redes-sociales {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .boton-red-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  min-width: 132px;
+  padding: 0.65rem 1rem;
+  color: var(--blanco);
+  background: var(--tarjeta);
+  border: 1px solid var(--cian);
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero .boton-red-social .icono-red-social {
+  display: inline-block;
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  color: currentColor;
+  fill: currentColor;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero .boton-red-social:hover,
+.hero .boton-red-social:focus-visible {
+  color: #fff;
+  background: var(--morado);
+  border-color: var(--magenta);
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.25), 4px 4px 0 var(--magenta);
+}
+
+.hero .boton-red-social:focus-visible {
+  outline: 2px solid var(--cian);
+  outline-offset: 3px;
 }

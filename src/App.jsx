@@ -10,19 +10,29 @@ import { cargarJSON } from './utils/cargarDatos.js';
 const enlaces = [
   { id: 'inicio', texto: 'Introducción' },
   { id: 'proyectos', texto: 'Proyectos' },
-  { id: 'noticias', texto: 'Platinos' },
+  { id: 'noticias', texto: 'Noticias' },
   { id: 'contacto', texto: 'Contacto' },
 ];
 
 export default function App() {
   // state con las noticias que se cargan desde el JSON
-  const [noticias, setNoticias] = useState({ tecnologia: [], carrera: [] });
+  const [noticias, setNoticias] = useState({ logros: [], enProgreso: [] });
   const [error, setError] = useState('');
 
   useEffect(() => {
     cargarJSON('data/noticias.json')
-      .then(setNoticias)
-      .catch((e) => setError(e.message));
+      .then((datos) => {
+        // Validar la estructura esperada antes de entregarla a los componentes.
+        if (
+          !datos ||
+          !Array.isArray(datos.logros) ||
+          !Array.isArray(datos.enProgreso)
+        ) {
+          throw new Error('El archivo de noticias tiene un formato inválido.');
+        }
+        setNoticias(datos);
+      })
+      .catch((e) => setError(e.message || 'No se pudieron cargar las noticias.'));
   }, []);
 
   return (
@@ -35,11 +45,12 @@ export default function App() {
           bio="Bienvenido a mi portafolio personal donde comparto mis proyectos y noticias recientes."
           foto="img/perfil.jpg"
           github="https://github.com/WilliamsG22"
+          youtube="https://www.youtube.com/watch?v=xLGktQmtR5A&list=LL&index=13"
         />
         <Proyectos proyectos={proyectos} />
         <section id="noticias" className="py-5 bg-light">
           <div className="container">
-            <h2 className="mb-4">Mi proceso de platino</h2>
+            <h2 className="mb-4">Noticias</h2>
             {error && (
               <div className="alert alert-danger" role="alert">
                 {error}
@@ -47,10 +58,10 @@ export default function App() {
             )}
             <div className="row">
               <div className="col-12 col-md-6">
-                <SeccionNoticias titulo="Platinos conseguidos" noticias={noticias.tecnologia} />
+                <SeccionNoticias titulo="Logros" noticias={noticias.logros} />
               </div>
               <div className="col-12 col-md-6">
-                <SeccionNoticias titulo="En progreso" noticias={noticias.carrera} />
+                <SeccionNoticias titulo="En progreso" noticias={noticias.enProgreso} />
               </div>
             </div>
           </div>

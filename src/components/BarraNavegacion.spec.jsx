@@ -27,6 +27,18 @@ describe('BarraNavegacion', () => {
     expect(enlace.getAttribute('href')).toBe('#inicio');
   });
 
+  it('cierra el menú al seleccionar un enlace', async () => {
+    const boton = vista.contenedor.querySelector('.navbar-toggler');
+    const menu = vista.contenedor.querySelector('#menu-principal');
+    const enlace = vista.contenedor.querySelector('.nav-link');
+
+    await clic(boton);
+    expect(menu.classList.contains('show')).toBeTrue();
+    await clic(enlace);
+    expect(menu.classList.contains('show')).toBeFalse();
+    expect(boton.getAttribute('aria-expanded')).toBe('false');
+  });
+
   it('abre y cierra el menú al hacer clic en el botón', async () => {
     const boton = vista.contenedor.querySelector('.navbar-toggler');
     const menu = vista.contenedor.querySelector('#menu-principal');
