@@ -16,6 +16,12 @@ describe('App', () => {
     expect(vista.contenedor.textContent).toContain('Noticia carrera');
     expect(vista.contenedor.querySelectorAll('#proyectos .card').length).toBe(3);
 
+    // Botones de redes en la introducción (GitHub y YouTube)
+    const botones = vista.contenedor.querySelectorAll('#inicio .boton-red-social');
+    expect(botones.length).toBe(2);
+    expect(botones[1].textContent).toContain('YouTube');
+    expect(botones[1].getAttribute('href')).not.toContain('list=');
+
     await vista.desmontar();
   });
 

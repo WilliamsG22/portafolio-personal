@@ -45,6 +45,7 @@ export default function App() {
           bio="Bienvenido a mi portafolio personal donde comparto mis proyectos y noticias recientes."
           foto="img/perfil.webp"
           github="https://github.com/WilliamsG22"
+          youtube="https://www.youtube.com/watch?v=xLGktQmtR5A"
         />
         <Proyectos proyectos={proyectos} />
         <section id="noticias" className="py-5 bg-light">
