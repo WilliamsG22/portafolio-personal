@@ -57,6 +57,23 @@ npm run deploy
 
 Antes de ejecutarlo, confirma que el repositorio remoto sea el correcto y que GitHub Pages esté configurado para usar la rama `gh-pages`. La publicación no se puede dar por confirmada hasta revisar la URL del sitio.
 
+## Capturas de pantalla
+
+### Inicio
+![Inicio del portafolio](docs/inicio.png)
+
+### Proyectos
+![Sección de proyectos](docs/proyectos.png)
+
+### Noticias
+![Sección de noticias](docs/noticias.png)
+
+### Contacto
+![Formulario de contacto](docs/contacto.png)
+
+### Vista móvil
+![Vista móvil](docs/movil.png)
+
 ## Rendimiento
 
 Las imágenes están en formato WebP y redimensionadas (todas bajo 100 KB) y las imágenes de proyectos usan `loading="lazy"`.
