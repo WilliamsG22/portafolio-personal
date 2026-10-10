@@ -57,15 +57,6 @@ npm run deploy
 
 Antes de ejecutarlo, confirma que el repositorio remoto sea el correcto y que GitHub Pages esté configurado para usar la rama `gh-pages`. La publicación no se puede dar por confirmada hasta revisar la URL del sitio.
 
-## Pendientes antes de entregar
-
-- **Enlaces de proyectos:** *Platinador* y *Diario de Arthur* aparecen como “En proceso” y todavía no tienen enlace. Cuando los subas a GitHub, completa el campo `enlace` en `src/data/proyectos.json` y cambia `enProceso` a `false`.
-- **Capturas de pantalla:** guarda capturas reales de la página inicial, los proyectos, las noticias y la vista móvil en `docs/` y agrégalas en la sección siguiente.
-
-## Capturas de pantalla
-
-_(Agregar las imágenes de `docs/` aquí.)_
-
 ## Rendimiento
 
 Las imágenes están en formato WebP y redimensionadas (todas bajo 100 KB) y las imágenes de proyectos usan `loading="lazy"`.
