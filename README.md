@@ -47,6 +47,8 @@ public/
 
 ## Publicar en GitHub Pages
 
+**Página publicada:** https://williamsg22.github.io/portafolio-personal/
+
 El proyecto incluye el script `deploy`, que publica `dist/` en la rama `gh-pages`:
 
 ```bash
@@ -59,7 +61,6 @@ Antes de ejecutarlo, confirma que el repositorio remoto sea el correcto y que Gi
 
 - **Enlaces de proyectos:** *Platinador* y *Diario de Arthur* aparecen como “En proceso” y todavía no tienen enlace. Cuando los subas a GitHub, completa el campo `enlace` en `src/data/proyectos.json` y cambia `enProceso` a `false`.
 - **Capturas de pantalla:** guarda capturas reales de la página inicial, los proyectos, las noticias y la vista móvil en `docs/` y agrégalas en la sección siguiente.
-- **Publicación:** después de `npm run deploy`, agrega aquí la URL pública de GitHub Pages.
 
 ## Capturas de pantalla
 
